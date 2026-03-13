@@ -1,0 +1,34 @@
+module sunny_riscv(
+    input clk,
+    input [3:0] sw,
+    output [7:0] result
+);
+
+wire clk_buf;
+
+BUFG clk_buffer (
+    .I(clk),
+    .O(clk_buf)
+);
+
+reg [31:0] counter = 0;
+reg [7:0] regA = 8'd5;
+reg [7:0] regB = 8'd3;
+reg [7:0] alu_out;
+
+always @(posedge clk_buf)
+begin
+    counter <= counter + 1;
+
+    case(sw)
+        4'b0000: alu_out <= regA + regB;
+        4'b0001: alu_out <= regA - regB;
+        4'b0010: alu_out <= regA & regB;
+        4'b0011: alu_out <= regA | regB;
+        default: alu_out <= counter[23:16];
+    endcase
+end
+
+assign result = alu_out;
+
+endmodule

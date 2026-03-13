@@ -1,0 +1,27 @@
+# SUNNY RISC-V Microprocessor (FPGA Implementation)
+
+## 📌 Overview
+This project implements a simple RISC-V inspired 8-bit processor using Verilog HDL.
+
+## ⚙️ Features
+- ALU (ADD, SUB, AND, OR)
+- Register File
+- Program Counter
+- Instruction Memory
+
+## 🛠 Tools Used
+- Xilinx ISE 14.7
+- Verilog HDL
+- FPGA Board
+
+## ▶️ How to Run
+1. Open in ISE
+2. Synthesize & Generate Bitstream
+3. Program FPGA
+4. Observe output on LEDs
+
+## 📷 Output
+(Add waveform + board images)
+
+## 👨‍💻 Author
+SUNNY
